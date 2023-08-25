@@ -116,8 +116,8 @@ let
           patch = ./rust_1_67_0.patch;
           reverse = true;
         }
-      ] ++ lib.optionals (rustOlder "1.71.0") [
-        { name = "rust-1.71.0";
+      ] ++ lib.optionals (rustOlder "1.69.0") [
+        { name = "rust-1.69.0";
           patch = ./rust_1_71_0.patch;
           reverse = true;
         }
