@@ -460,7 +460,7 @@ self = stdenv.mkDerivation {
   '';
 
   env.NIX_CFLAGS_COMPILE = toString ([
-      "-march=armv8.5-a+fp16+fp16fml+aes+sha2+sha3+nosve+nosve2+nomemtag+norng+nosm4+nof32mm+nof64mm"
+      "-march=armv8.6-a+fp16+fp16fml+aes+sha2+sha3+bf16+i8mm+nosve+nosve2+nomemtag+nosm4+nof32mm+nof64mm"
       "-UPIPE_SEARCH_DIR"
       "-DPIPE_SEARCH_DIR=\"${placeholder "opencl"}/lib/gallium-pipe\""
   ]);
