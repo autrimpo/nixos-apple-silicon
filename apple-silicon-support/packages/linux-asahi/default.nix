@@ -18,15 +18,15 @@ let
       inherit stdenv lib;
 
       pname = "linux-asahi";
-      version = "6.17.12";
-      modDirVersion = version;
-      extraMeta.branch = "6.17";
+      version = "6.18.2-fairydust";
+      modDirVersion = "6.18.2";
+      extraMeta.branch = "6.18";
 
       src = fetchFromGitHub {
         owner = "AsahiLinux";
         repo = "linux";
-        tag = "asahi-6.17.12-1";
-        hash = "sha256-6n29aN+381ROzO8AiEK9ji0GBaAd9d8TSzI6bVf+Lqw=";
+        rev = "21a493172ce13c95df12b42faddfca515388d80c";
+        hash = "sha256-UCQs+VYIWZMYiizkLWdPjSipBuOB1ahZx2oy5VuEjPI=";
       };
 
       kernelPatches = [
@@ -51,6 +51,10 @@ let
 
             APPLE_PMGR_MISC = yes;
             APPLE_PMGR_PWRSTATE = yes;
+
+            APPLE_MAILBOX = yes;
+            APPLE_RTKIT = yes;
+            APPLE_SART = yes;
           };
           features.rust = true;
         }
